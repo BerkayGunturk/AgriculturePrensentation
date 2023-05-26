@@ -1,13 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BusinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AgriculturePrensentation.ViewComponents
 {
 	public class _TeamPartial : ViewComponent
 	{
-		
+		private readonly ITeamService _teamService;
+
+		public _TeamPartial(ITeamService teamService)
+		{
+			_teamService = teamService;
+		}
+
 		public IViewComponentResult Invoke()
 		{
-			return View();
+			var values = _teamService.GetListAll();
+			return View(values);
 		}
 	}
 }
