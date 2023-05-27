@@ -42,7 +42,9 @@ namespace AgriculturePrensentation
             services.AddScoped<IContactDal, EfContactDal>();
 			services.AddScoped<ISocialMedialService, SocialMediaManager>();
 			services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
-		
+			services.AddScoped<IAdminService, AdminManager>();
+			services.AddScoped<IAdminDal, EfAdminDal>();
+
 
 
 
