@@ -30,7 +30,7 @@ namespace AgriculturePrensentation.Controllers
         [HttpPost]
         public IActionResult AddTeam(Team team)
         {
-             TeamValidator validationRules = new TeamValidator();
+            TeamValidator validationRules = new TeamValidator();
             ValidationResult result = validationRules.Validate(team);
 
             if(result.IsValid)
